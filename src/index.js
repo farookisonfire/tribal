@@ -1,3 +1,9 @@
 import './index.css';
+import React from 'react';
+import { render } from 'react-dom';
+import App from './App';
 
-console.log('hello world.');
+render(
+  <App />,
+  document.getElementById('app')
+);
