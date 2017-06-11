@@ -1,0 +1,10 @@
+.user-list {
+  text-align: center;
+}
+
+.user { 
+  display: inline-block;
+  margin: 10px;
+  text-align: left;
+  width: 250px;
+}

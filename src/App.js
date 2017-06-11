@@ -1,9 +1,12 @@
 import React from 'react';
+import UserListPage from './features/UserListPage/UserListPage';
 
 class App extends React.Component{
   render() {
     return (
-      <div>Initial Component</div>
+      <div>
+        <UserListPage />
+      </div>
     );
   }
 }
