@@ -5,16 +5,19 @@ import CreateUser from './CreateUser';
 import {capitalize, trimDate, sortBy} from './userListPageHelpers';
 import {getUsers} from './userListActions';
 import SortBy from './SortBy';
+import SearchBar from './SearchBar';
 
 export class UserListPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      sortBy: "last"
+      sortBy: "last",
+      searchString: ""
     };
 
-    this.handleSortSelect = (event, value) => this.setState({sortBy: value}); 
+    this.handleSortSelect = (event, value) => this.setState({sortBy: value});
+    this.handleInputChange = (event, newValue) => this.setState({searchString: newValue.toLowerCase()});
   }
   
   componentDidMount() {
@@ -24,10 +27,11 @@ export class UserListPage extends React.Component {
   render() {
     return (
       <div className="user-list">
+        <SearchBar handleInputChange={this.handleInputChange}/>
         <SortBy handleSelect={this.handleSortSelect}/>
         {this.state.sortBy === "last" ? 
-          this.props.usersByLast.map((user, index) => CreateUser(user, index, this.props.usersByLast, this.state.sortBy)) :
-          this.props.usersByFirst.map((user, index) => CreateUser(user, index, this.props.usersByFirst, this.state.sortBy))
+          this.props.usersByLast.map((user, index) => CreateUser(user, index, this.props.usersByLast, this.state.sortBy, this.state.searchString)) :
+          this.props.usersByFirst.map((user, index) => CreateUser(user, index, this.props.usersByFirst, this.state.sortBy, this.state.searchString))
         }
       </div>
     );
