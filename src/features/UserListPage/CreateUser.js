@@ -1,29 +1,28 @@
 import React from 'react';
-import {Card, CardHeader, CardMedia, CardTitle} from 'material-ui/Card';
+import {Card, CardMedia, CardTitle} from 'material-ui/Card';
+import LetterDivider from './LetterDivider';
 
-const CreateUser = (user) => {
+const CreateUser = (user, index, users, sortBy) => {
   return (
-    <Card 
-      key={user.id}   
-      className="user">
-        <CardHeader
-          avatar={user.thumbnail}  
-          title={`@${user.username}`}
-          titleStyle={{lineHeight: "250%"}} />
-        <CardMedia>
-          <img src={user.picture} alt="" />
-        </CardMedia>
-        <CardTitle 
-          title={user.name}
-          subtitle={
-            <div>
-              DOB: {user.dob}
-              <br/>
-              City: {user.city}
-            </div> 
-          } 
-        />
-      </Card>
+    <span>
+      {(index === 0 || user[`${sortBy}Name`][0] !== users[index-1][`${sortBy}Name`][0]) && 
+        <LetterDivider letter={user[`${sortBy}Name`][0]} />}
+      <Card key={user.id} className="user">
+          <CardMedia>
+            <img src={user.picture} alt="" />
+          </CardMedia>
+          <CardTitle 
+            title={sortBy === "last" ? user.lastName + ", " + user.firstName : user.firstName + " " + user.lastName}
+            subtitle={
+              <div>
+                DOB: {user.dob}
+                <br/>
+                City: {user.city}
+              </div> 
+            }
+          />
+        </Card>
+      </span>
   );
 };
 

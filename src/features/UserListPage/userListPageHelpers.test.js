@@ -1,4 +1,4 @@
-import {capitalize, trimDate} from './userListPageHelpers';
+import {capitalize, trimDate, sortBy} from './userListPageHelpers';
 
 describe("userListPageHelpers", () => {
   describe("capitalize", () => {
@@ -17,5 +17,22 @@ describe("userListPageHelpers", () => {
       const actual = trimDate(dateTime);
         expect(actual).toEqual(expected);
     });
+  });
+});
+
+describe("sortBy", () => {
+  it('should sort list by specified value', () => {
+    const list = [
+      {firstName: "foo", lastName: "bar"},
+      {firstName: "baz", lastName: "dol"}
+    ];
+
+    const expected = [
+      {firstName: "baz", lastName: "dol"},
+      {firstName: "foo", lastName: "bar"}
+    ];
+    
+    const actual = sortBy(list, "firstName");
+      expect(actual).toEqual(expected);
   });
 });
