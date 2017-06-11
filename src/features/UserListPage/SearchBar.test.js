@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import SearchBar from './searchBar';
+import SearchBar from './SearchBar';
 
 describe('<SearchBar />', () => {
   it('should render TextField', () => {
