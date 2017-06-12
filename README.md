@@ -28,11 +28,18 @@ My overall approach entailed breaking the project into the following pieces:
 * Creat a production build and deploy the UI.
 
 My workflow consisted of the following:
-* File issue, and when relevent, include Motivation, Implementation Details, and Task List.
+* File an issue, and when relevent, include Motivation, Implementation Details, and Task List.
 * Create a local branch, and begin writing code to fulfill issue requirements.
 * Write unit-tests.
 * Push Branch
-* Run CI-check and merge. 
+* Run CI-check, merge, close issue. 
+
+Project Architecture
+* The src code can be found in the /src directory.
+* I have organized my front-end code by feature, in /src/features. 
+* I have a single Container (Smart) Component, that is connected to the Redux store. This component is called UserListPage, and it functions as the parent of the other feature-based components.
+* I have abstracted some of the application logic required in UserListPage, into userListPageHelpers.js.
+* I have implemented stateless functional components wherever else possible. 
 
 Completed Features
 * User can view a list of users.
