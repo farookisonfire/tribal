@@ -1,5 +1,5 @@
 import userListReducer from './userListReducer';
-import {requestUsers, receiveUsersSuccess, receiveUsersFail} from './userListActions';
+import {receiveUsersSuccess} from './userListActions';
 
 describe("userListReducer", () => {
   it("should return a list of users when passed RECEIVE_USERS_SUCCESS", () => {

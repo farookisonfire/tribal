@@ -1,4 +1,4 @@
-import {capitalize, trimDate, sortBy} from './userListPageHelpers';
+import {capitalize, trimDate, sortList} from './userListPageHelpers';
 
 describe("userListPageHelpers", () => {
   describe("capitalize", () => {
@@ -20,7 +20,7 @@ describe("userListPageHelpers", () => {
   });
 });
 
-describe("sortBy", () => {
+describe("sortList", () => {
   it('should sort list by specified value', () => {
     const list = [
       {firstName: "foo", lastName: "bar"},
@@ -32,7 +32,7 @@ describe("sortBy", () => {
       {firstName: "foo", lastName: "bar"}
     ];
     
-    const actual = sortBy(list, "firstName");
+    const actual = sortList(list, "first");
       expect(actual).toEqual(expected);
   });
 });
