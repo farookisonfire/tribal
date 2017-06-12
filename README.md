@@ -1,5 +1,6 @@
 # tribal
 [![Build Status](https://travis-ci.org/farookkhan/tribal.svg?branch=master)](https://travis-ci.org/farookkhan/tribal)
+
 A React-Redux web-app that displays and sorts list of users.
 
 ## Development
