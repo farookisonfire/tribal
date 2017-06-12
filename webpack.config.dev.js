@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   devtool: 'eval-source-map',
@@ -19,10 +18,6 @@ export default {
     new webpack.LoaderOptionsPlugin({
       debug: true,
       noInfo: false,
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inject: true
     })
   ],
   module: {
