@@ -3,6 +3,9 @@
 
 A React-Redux web-app that displays and sorts list of users.
 
+## Deployment
+[Live Demo](http://harmonious-move.surge.sh/)
+
 ## Development
 
 * Install dependencies.
