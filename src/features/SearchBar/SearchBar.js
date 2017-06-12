@@ -5,7 +5,8 @@ import TextField from 'material-ui/TextField';
 const SearchBar = ({handleInputChange}) => 
   <TextField 
     hintText="Search for a user..."
-    onChange={handleInputChange}/>;
+    onChange={handleInputChange}
+    className="search-bar" />;
 
 SearchBar.propTypes = {
   handleInputChange: PropTypes.func.isRequired

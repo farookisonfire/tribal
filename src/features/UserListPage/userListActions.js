@@ -15,7 +15,7 @@ export function receiveUsersFail(err) {
 export function getUsers() {
   return function(dispatch) {
     dispatch(requestUsers());
-    fetch('https://randomuser.me/api/?results=20&inc=name,location,dob,id,picture,login')
+    fetch('https://randomuser.me/api/?results=20')
       .then(res => {
         if (res.ok) {
           return res.json();
